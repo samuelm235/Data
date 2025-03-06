@@ -4,7 +4,12 @@ public class Data {
 
     public Data(int rows, int columns)
     {
-        grid = new int[row][columns];
+        grid = new int[rows][columns];
+    }
+    
+    public Data(int[][] g)
+    {
+        grid = g;
     }
 
     /**
@@ -14,7 +19,18 @@ public class Data {
      * grid has at least one element.
      */
     public void repopulate() {
-        /* to be implemented in part (a) */
+        for(int row = 0; row < grid.length; row++)
+        {
+            for(int col = 0; col < grid[0].length; col++)
+            {  
+                int rand = 0;
+                while(!(rand >= 1 && rand <= MAX && rand % 10 == 0 && !(rand % 100 == 0)))
+                {
+                    rand = (int) (Math.random() * Integer.MAX_VALUE + 1);
+                }
+                grid[row][col] = rand;
+            }
+        }
     }
 
 
@@ -26,7 +42,14 @@ public class Data {
      * grid has at least one element.
      */
     public int countIncreasingCols() {
-        /* to be implemented in part (b) */
+        for(int col = 0; col < grid[0].length; col++)
+        {
+
+            for(int row = 0; row < grid.length; row++)
+            {  
+                if(grid[row][col] < grid[])
+            }
+        }
     }
 
     public String toString()
